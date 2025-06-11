@@ -93,4 +93,11 @@ public class RoomRequest {
                 " 当前服务的空调ID：" + this.currentACId +
                 " 空调是否开启：" + this.acOn;
     }
+
+    public void sleep(){
+        waitingTime = null;
+        servingTime = null;
+        currentACId = null;
+        acOn = false;
+    }
 }

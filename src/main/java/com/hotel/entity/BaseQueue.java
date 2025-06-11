@@ -1,12 +1,14 @@
 package com.hotel.entity;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
 @Data
+@Slf4j
 public class BaseQueue {
     protected PriorityQueue<RoomRequest> queue;
 
@@ -21,18 +23,38 @@ public class BaseQueue {
         return queue.size();
     }
 
-    public String getQueueInfo(){
-        StringBuilder sb = new StringBuilder();
-        for (RoomRequest roomRequest : queue) {
-            sb.append(roomRequest.getAllInfo()).append("\n");
+    public List<Long> getAllRoomIds(){
+        List<Long> roomIds = new ArrayList<>();
+        for (RoomRequest roomRequest : queue){
+            roomIds.add(roomRequest.getRoomId());
         }
-        return sb.toString();
+        return roomIds;
+    }
+
+    public List<RoomRequest> getAllRequests(){
+        return List.copyOf(queue);
+    }
+
+    public void printStatus(){
+        for (RoomRequest roomRequest : queue) {
+            log.info(roomRequest.getAllInfo());
+        }
     }
 
     public RoomRequest dequeue(){
         return queue.poll();
     }
 
+    public RoomRequest peek(){
+        return queue.peek();
+    }
+
+    /**
+     * 删除指定房间的请求
+     * 此方法不修改请求中的时间信息，需要手动处理
+     * @param roomId 房间id
+     * @return 删除的请求
+     */
     public RoomRequest dequeue(Long roomId){
         RoomRequest result = null;
         List<RoomRequest> temp = new ArrayList<>();

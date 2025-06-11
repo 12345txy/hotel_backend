@@ -131,4 +131,11 @@ public class Room {
         this.currentTemp = this.defaultTemp;
     }
 
+    public String getAllInfo() {
+        return "房间号：" + this.id
+                + " 房间温度：" + this.currentTemp
+                + " 房间默认温度：" + this.defaultTemp
+                + " 房间日费：" + this.dailyRate;
+    }
+
 } 

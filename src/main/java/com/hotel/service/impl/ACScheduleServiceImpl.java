@@ -15,8 +15,7 @@ import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 @Service
@@ -28,9 +27,22 @@ public class ACScheduleServiceImpl implements ACScheduleService {
     @Value("${hotel.ac.total-count}")
     private int acCount;
 
+    @Value("${hotel.ac.time-slice}")
+    private int timeSlice;
+
+    @Value("${hotel.ac.heating-rate}")
+    private double heatingRate;
+
+    @Value("${hotel.ac.mode}")
+    private int mode;
+
+    @Value("${hotel.ac.wake-up-temp}")
+    private double wakeUpTemp;
+
     private final ReentrantLock scheduleLock = new ReentrantLock();
     private final ServingQueue servingQueue = new ServingQueue();
     private final WaitingQueue waitingQueue = new WaitingQueue();
+    private final Map<Long, RoomRequest> sleepingRequests = new HashMap<>();
 
 
     @Autowired
@@ -39,12 +51,106 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         this.roomService = roomService;
     }
 
-    //  每5秒打印一次队列状态
-    @Scheduled(fixedRate = 5000)
     private void printStatus() {
-        log.info("服务队列: {}", servingQueue.getQueueInfo());
-        log.info("等待队列: {}", waitingQueue.getQueueInfo());
+        log.info("开始打印状态");
+        servingQueue.printStatus();
+        waitingQueue.printStatus();
+        // 打印休眠请求
+        log.info("休眠请求：");
+        for (Map.Entry<Long, RoomRequest> entry : sleepingRequests.entrySet()) {
+            log.info(entry.getValue().getAllInfo());
+        }
         acService.printStatus();
+        roomService.printStatus();
+    }
+
+    /**
+     * 实现时间片轮转和调度逻辑
+     */
+    private void schedule() {
+        log.info("开始调度");
+        // 移除服务队列中达到目标温度的房间
+        log.info("移除服务队列中达到目标温度的房间");
+        List<RoomRequest> servingRoomIds = servingQueue.getAllRequests();
+        for (RoomRequest request : servingRoomIds) {
+            Long roomId = request.getRoomId();
+            Room room = roomService.getRoomById(roomId);
+            // 如果当前温度小于等于目标温度，则移除出服务队列
+            if ((room.getCurrentTemp() - request.getTargetTemp()) * mode <= 0){
+                RoomRequest sleepingRequest = servingQueue.dequeue(roomId);
+                // todo: 记录详单
+                request.sleep();
+                sleepingRequests.put(roomId, sleepingRequest);
+                log.info("房间{}已满足要求，进入休眠队列", roomId);
+            }
+        }
+        // 查看是否有恢复请求的房间
+        log.info("查看是否有恢复请求的房间");
+        List<Long> wakeUpRoomIds = new ArrayList<>();
+        for (RoomRequest request : sleepingRequests.values()){
+            Long roomId = request.getRoomId();
+            Room room = roomService.getRoomById(roomId);
+            // 如果当前温度大于等于目标温度+唤醒温度，则加入等待队列
+            if ((room.getCurrentTemp() - request.getTargetTemp()) * mode >= wakeUpTemp){
+                wakeUpRoomIds.add(roomId);
+                waitingQueue.enqueue(request);
+                log.info("房间{}已加入等待队列", roomId);
+            }
+        }
+        wakeUpRoomIds.forEach(sleepingRequests::remove);
+        // 判断服务队列是否有空余
+        log.info("服务队列剩余{}个位置", acCount - servingQueue.size());
+        while (servingQueue.size() < acCount){
+            if (waitingQueue.size() > 0){
+                RoomRequest request = waitingQueue.dequeue();
+                servingQueue.enqueue(request);
+                log.info("房间{}已加入服务队列", request.getRoomId());
+            } else {
+                break;
+            }
+        }
+        // 判断是否发生置换
+        log.info("开始检查置换");
+        while (waitingQueue.size() > 0){
+            RoomRequest request = waitingQueue.peek();
+            if (servingQueue.checkReplace(request, timeSlice)){
+                waitingQueue.dequeue();
+                RoomRequest waitingRequest = servingQueue.dequeue();
+                // todo: 记录详单
+                waitingQueue.enqueue(waitingRequest);
+                servingQueue.enqueue(request);
+                log.info("发生置换, 房间{}换入, 房间{}换出",
+                        request.getRoomId(),  waitingRequest.getRoomId());
+            } else {
+                break;
+            }
+        }
+        // 更新空调状态
+        log.info("更新空调状态");
+        acService.update(servingQueue.getAllRequests());
+        log.info("调度完成");
+    }
+
+    /**
+     * 实现系统时钟
+     * 每5秒执行一次
+     */
+    @Scheduled(fixedRateString = "${hotel.tick-time}")
+    private void tick() {
+        log.info("tick");
+        scheduleLock.lock();
+
+        // 进行调度
+        schedule();
+        // 打印状态
+        printStatus();
+        // 空调工作
+        acService.tick();
+        // 房间升温
+        List<Long> servingRoomIds = servingQueue.getAllRoomIds();
+        roomService.heatingRooms(servingRoomIds, heatingRate);
+
+        scheduleLock.unlock();
     }
 
 
@@ -113,6 +219,10 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             } else if (waitingQueue.checkRoomId(roomId)){
                 // 请求在等待队列
                 result = waitingQueue.changeTemp(roomId, targetTemp);
+            } else if (sleepingRequests.get(roomId)!= null){
+                RoomRequest request = sleepingRequests.get(roomId);
+                request.setTargetTemp(targetTemp);
+                result = "温度已调整";
             } else {
                 result = "房间未开启空调";
             }

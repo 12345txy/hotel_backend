@@ -178,6 +178,17 @@ public class AirConditioner {
                 ", targetTemp: " + targetTemp +
                 ", fanSpeed: " + fanSpeed;
     }
+    /**
+     * 获取摘要信息
+     * @return 摘要信息
+     */
+    public String getSummary() {
+        return "id: " + id +
+                ", servingRoomId: " + servingRoomId +
+                ", on: " + on +
+                ", targetTemp: " + targetTemp +
+                ", fanSpeed: " + fanSpeed;
+    }
 
     /**
      * 初始化空调
@@ -188,5 +199,38 @@ public class AirConditioner {
         this.on = true;
         this.targetTemp = this.defaultTemp;
         this.fanSpeed = this.defaultSpeed;
+    }
+
+    public void init(RoomRequest request) {
+        this.servingRoomId = request.getRoomId();
+        this.on = true;
+        if (request.getTargetTemp() ==  null){
+            request.setTargetTemp(this.defaultTemp);
+        }
+        double temp = request.getTargetTemp();
+        if (temp > this.maxTemp) {
+            temp = this.maxTemp;
+        }
+        if (temp < this.minTemp) {
+            temp = this.minTemp;
+        }
+        this.targetTemp = temp;
+        if (request.getFanSpeed() == null){
+            request.setFanSpeed(this.defaultSpeed);
+        }
+        this.fanSpeed = request.getFanSpeed();
+    }
+
+    public Double getCoolingRate() {
+        switch (this.fanSpeed) {
+            case "L":
+                return this.lowSpeedRate;
+            case "M":
+                return this.midSpeedRate;
+            case "H":
+                return this.highSpeedRate;
+            default:
+                return 0.0;
+        }
     }
 } 

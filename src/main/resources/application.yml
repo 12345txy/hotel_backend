@@ -53,11 +53,16 @@ mybatis-plus:
 
 # 酒店配置
 hotel:
+  time-multiplier: 12 # 系统时间倍率     todo:需要配置
+  tick-time: 5000 # 60*1000/${hotel.time-multiplier}    todo:需要配置
   ac:
     total-count: 3 # 总空调数量
     room-count: 5 # 总房间数量
     default-temp: 25 # 默认温度
     time-slice: 120 # 时间片轮转时间(秒)
+    heating-rate: 0.5 # 升温速度(度/分钟)
+    mode: 1 # 制冷为1 制热为-1    todo:需要配置
+    wake-up-temp: 1 # 唤醒请求的温度差
   billing:
     room-rate: 100.0 # 房费(元/天)
     ac-rate:
