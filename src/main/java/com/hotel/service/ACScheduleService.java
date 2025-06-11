@@ -22,4 +22,21 @@ public interface ACScheduleService {
      * @return 修改结果
      */
     String changeTemp(Long roomId, Double targetTemp);
+
+    /**
+     * 修改风速
+     *
+     * @param roomId     房间ID
+     * @param fanSpeed   风速
+     * @return 修改结果
+     */
+    String changeFanSpeed(Long roomId, String fanSpeed);
+
+    /**
+     * 停止空调
+     *
+     * @param roomId     房间ID
+     * @return 停止结果
+     */
+    String stopAC(Long roomId);
 } 

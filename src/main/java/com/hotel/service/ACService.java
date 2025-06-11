@@ -12,6 +12,7 @@ public interface ACService {
     RoomRequest startAC(Long roomId);
     void printStatus();
     boolean changeTemp(Long acId, Double targetTemp);
+    boolean changeFanSpeed(Long acId, String fanSpeed);
     void tick();
     void update(List<RoomRequest> servingRooms);
 }

@@ -80,6 +80,16 @@ public class ACServiceImpl implements ACService {
     }
 
     @Override
+    public boolean changeFanSpeed(Long acId, String fanSpeed) {
+        AirConditioner ac = acs.get(acId);
+        if (fanSpeed == null || fanSpeed.isEmpty()){
+            return false;
+        }
+        ac.setFanSpeed(fanSpeed);
+        return true;
+    }
+
+    @Override
     public void tick(){
         // 降温
         for (AirConditioner ac : acs.values()) {

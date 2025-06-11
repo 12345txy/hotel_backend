@@ -83,6 +83,17 @@ public class BaseQueue {
         }
     }
 
+    public String changeFanSpeed(Long roomId, String fanSpeed) {
+        RoomRequest roomRequest = dequeue(roomId);
+        if (roomRequest != null) {
+            roomRequest.setFanSpeed(fanSpeed);
+            enqueue(roomRequest);
+            return "风速已调整";
+        }else{
+            return "不存在房间" + roomId + "的请求";
+        }
+    }
+
 
     public RoomRequest getRoomRequest(Long roomId){
         for (RoomRequest roomRequest : queue) {

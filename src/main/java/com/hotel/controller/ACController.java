@@ -45,20 +45,20 @@ public class ACController {
         }
     }
 
-//    /**
-//     *
-//     * @param roomId 房间ID
-//     *
-//     */
-//    @PostMapping("/room/{roomId}/stop")
-//    public ResponseEntity<Map<String, String>> PowerOff(@PathVariable Long roomId) {
-//        try {
-//            String result = hotelService.stopAc(roomId);
-//            return ResponseEntity.ok(Map.of("message", result));
-//        } catch (Exception e) {
-//            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
-//        }
-//    }
+    /**
+     *
+     * @param roomId 房间ID
+     *
+     */
+    @PostMapping("/room/{roomId}/stop")
+    public ResponseEntity<Map<String, String>> PowerOff(@PathVariable Long roomId) {
+        try {
+            String result = acScheduleService.stopAC(roomId);
+            return ResponseEntity.ok(Map.of("message", result));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
 
     /**
      * 调整空调温度
@@ -75,21 +75,21 @@ public class ACController {
         }
     }
 
-//    /**
-//     * 调整空调风速
-//     */
-//    @PutMapping("/room/{roomId}/speed")
-//    public ResponseEntity<Map<String, String>> ChangeSpeed(
-//            @PathVariable Long roomId,
-//            @RequestParam String fanSpeed) {
-//        try {
-//            String result = hotelService.adjustAc(roomId, mode, fanSpeed, targetTemp);
-//            return ResponseEntity.ok(Map.of("message", result));
-//        } catch (Exception e) {
-//            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
-//        }
-//    }
-//
+    /**
+     * 调整空调风速
+     */
+    @PutMapping("/room/{roomId}/speed")
+    public ResponseEntity<Map<String, String>> ChangeSpeed(
+            @PathVariable Long roomId,
+            @RequestParam String fanSpeed) {
+        try {
+            String result = acScheduleService.changeFanSpeed(roomId, fanSpeed);
+            return ResponseEntity.ok(Map.of("message", result));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
+    }
+
 //    /**
 //     * 获取指定房间的空调状态
 //     */
