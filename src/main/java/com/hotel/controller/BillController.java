@@ -21,10 +21,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/bills")
 @RequiredArgsConstructor
 public class BillController {
-    
+
     private final BillMapper billMapper;
     private final BillDetailMapper billDetailMapper;
-    
+
     /**
      * 查询所有账单
      */
@@ -35,7 +35,7 @@ public class BillController {
                 .map(this::buildBillResponse)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * 根据ID查询账单详情
      */
@@ -47,7 +47,7 @@ public class BillController {
         }
         return buildBillResponse(bill);
     }
-    
+
     /**
      * 根据客户ID查询账单
      */
@@ -58,7 +58,7 @@ public class BillController {
                 .map(this::buildBillResponse)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * 根据房间号查询账单
      */
@@ -69,7 +69,7 @@ public class BillController {
                 .map(this::buildBillResponse)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * 根据房间ID查询账单
      */
@@ -80,7 +80,7 @@ public class BillController {
                 .map(this::buildBillResponse)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * 查询未支付账单
      */
@@ -91,7 +91,7 @@ public class BillController {
                 .map(this::buildBillResponse)
                 .collect(Collectors.toList());
     }
-    
+
     /**
      * 支付账单
      */
@@ -101,18 +101,18 @@ public class BillController {
         if (bill == null) {
             throw new RuntimeException("账单不存在");
         }
-        
+
         if (BillStatus.PAID.getCode().equals(bill.getStatus())) {
             return "账单已支付";
         }
-        
+
         bill.setStatus(BillStatus.PAID.getCode());
         billMapper.updateById(bill);
-        
+
         log.info("账单{}已支付，金额：{}", bill.getBillNumber(), bill.getTotalAmount());
         return "支付成功";
     }
-    
+
     /**
      * 取消账单
      */
@@ -122,18 +122,18 @@ public class BillController {
         if (bill == null) {
             throw new RuntimeException("账单不存在");
         }
-        
+
         if (BillStatus.PAID.getCode().equals(bill.getStatus())) {
             throw new RuntimeException("已支付账单不能取消");
         }
-        
+
         bill.setStatus(BillStatus.CANCELLED.getCode());
         billMapper.updateById(bill);
-        
+
         log.info("账单{}已取消", bill.getBillNumber());
         return "账单已取消";
     }
-    
+
     /**
      * 查询账单详单
      */
@@ -141,7 +141,7 @@ public class BillController {
     public List<BillDetail> getBillDetails(@PathVariable Long billId) {
         return billDetailMapper.findByBillId(billId);
     }
-    
+
     /**
      * 构建账单响应对象
      */

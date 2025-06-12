@@ -117,31 +117,21 @@ CREATE TABLE ac_config (
 #     FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE RESTRICT
 # ) COMMENT '账单主表';
 
--- 账单详单表
-# CREATE TABLE IF NOT EXISTS bill_details (
-#     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-#     bill_id BIGINT NOT NULL COMMENT '账单ID',
-#     room_id BIGINT NOT NULL COMMENT '房间ID',
-#     customer_id BIGINT NOT NULL COMMENT '客户ID',
-#     ac_id BIGINT COMMENT '空调ID',
-#     ac_mode VARCHAR(20) COMMENT '空调模式',
-#     fan_speed VARCHAR(20) COMMENT '风速',
-#     start_time DATETIME NOT NULL COMMENT '开始时间',
-#     end_time DATETIME NOT NULL COMMENT '结束时间',
-#     duration BIGINT NOT NULL COMMENT '持续时间(分钟)',
-#     cost DOUBLE NOT NULL COMMENT '费用',
-#     rate DOUBLE NOT NULL COMMENT '费率(元/分钟)',
-#     detail_type VARCHAR(50) NOT NULL COMMENT '详单类型',
-#     create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-#     INDEX idx_bill_id (bill_id),
-#     INDEX idx_room_id (room_id),
-#     INDEX idx_customer_id (customer_id),
-#     INDEX idx_start_time (start_time),
-#     FOREIGN KEY (bill_id) REFERENCES bills (id) ON DELETE CASCADE,
-#     FOREIGN KEY (room_id) REFERENCES rooms (id) ON DELETE RESTRICT,
-#     FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE RESTRICT,
-#     FOREIGN KEY (ac_id) REFERENCES air_conditioners (id) ON DELETE SET NULL
-# ) COMMENT '账单详单表';
+# 账单详单表
+CREATE TABLE IF NOT EXISTS bill_details (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    room_id BIGINT NOT NULL COMMENT '房间ID',
+    ac_mode VARCHAR(20) COMMENT '空调模式',
+    fan_speed VARCHAR(20) COMMENT '风速',
+    request_time DATETIME NOT NULL COMMENT '请求时间',
+    start_time DATETIME NOT NULL COMMENT '开始时间',
+    end_time DATETIME NOT NULL COMMENT '结束时间',
+    duration BIGINT NOT NULL COMMENT '持续时间(分钟)',
+    cost DOUBLE NOT NULL COMMENT '费用',
+    rate DOUBLE NOT NULL COMMENT '费率(元/分钟)',
+    detail_type VARCHAR(50) NOT NULL COMMENT '详单类型',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+) COMMENT '账单详单表';
 
 -- 初始化房间数据 (roomId: 1-5)
 # INSERT INTO

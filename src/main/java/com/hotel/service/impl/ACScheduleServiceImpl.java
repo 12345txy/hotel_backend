@@ -1,11 +1,9 @@
 package com.hotel.service.impl;
 
-import com.hotel.entity.Room;
-import com.hotel.entity.RoomRequest;
-import com.hotel.entity.ServingQueue;
-import com.hotel.entity.WaitingQueue;
+import com.hotel.entity.*;
 import com.hotel.service.ACScheduleService;
 import com.hotel.service.ACService;
+import com.hotel.service.BillDetailService;
 import com.hotel.service.RoomService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +22,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ACScheduleServiceImpl implements ACScheduleService {
     private final ACService acService;
     private final RoomService roomService;
+    private final BillDetailService billDetailService;
 
     @Value("${hotel.ac.total-count}")
     private int acCount;
@@ -50,9 +49,10 @@ public class ACScheduleServiceImpl implements ACScheduleService {
 
 
     @Autowired
-    public ACScheduleServiceImpl(ACService acService, RoomService roomService) {
+    public ACScheduleServiceImpl(ACService acService, RoomService roomService, BillDetailService billDetailService) {
         this.acService = acService;
         this.roomService = roomService;
+        this.billDetailService = billDetailService;
     }
 
     @PostConstruct
@@ -88,6 +88,9 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             if ((room.getCurrentTemp() - request.getTargetTemp()) * mode <= 0) {
                 RoomRequest sleepingRequest = servingQueue.dequeue(roomId);
                 // todo: 记录详单
+                BillDetail detail = billDetailService.createBillDetailByRequest(request, "TARGET_REACHED", mode);
+//                billDetailService.saveBillDetail(detail);
+
                 request.sleep();
                 sleepingRequests.put(roomId, sleepingRequest);
                 log.info("房间{}已满足要求，进入休眠队列", roomId);
@@ -126,6 +129,9 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                 waitingQueue.dequeue();
                 RoomRequest waitingRequest = servingQueue.dequeue();
                 // todo: 记录详单
+                BillDetail  detail = billDetailService.createBillDetailByRequest(waitingRequest, "SCHEDULE", mode);
+//                billDetailService.saveBillDetail(detail);
+
                 waitingQueue.enqueue(waitingRequest);
                 servingQueue.enqueue(request);
                 log.info("发生置换, 房间{}换入, 房间{}换出",
@@ -137,6 +143,16 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         // 更新空调状态
         log.info("更新空调状态");
         acService.update(servingQueue.getAllRequests());
+        // 更新请求状态
+        for (RoomRequest request : servingQueue.getAllRequests()){
+            request.setJustRecord(false);
+        }
+        for (RoomRequest request : sleepingRequests.values()){
+            request.setJustRecord(false);
+        }
+        for (RoomRequest request : waitingQueue.getAllRequests()){
+            request.setJustRecord(false);
+        }
         log.info("调度完成");
     }
 
@@ -269,6 +285,9 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                     log.info(result);
                 } else {
                     // todo: 记录详单
+                    BillDetail detail = billDetailService.createBillDetailByRequest(request, "ADJUST_FAN", mode);
+//                    billDetailService.saveBillDetail(detail);
+
                     result = servingQueue.changeFanSpeed(roomId, fanSpeed);
                     log.info("{} in serve -fan", result);
                 }
@@ -305,9 +324,12 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             // 检查是否已有请求
             RoomRequest request = servingQueue.getRoomRequest(roomId);
             if (request != null) {
+                // todo: 记录详单
+                BillDetail detail = billDetailService.createBillDetailByRequest(request, "AC_OFF", mode);
+//                billDetailService.saveBillDetail(detail);
+
                 // 从服务队列中移除并记录详单
                 servingQueue.dequeue(roomId);
-                // todo: 记录详单
             } else {
                 // 从等待队列和休眠队列移除
                 waitingQueue.dequeue(roomId);

@@ -51,6 +51,11 @@ public class RoomRequest {
      */
     private Boolean acOn;
 
+    /**
+     * 是否刚完成详单记录
+     */
+    private Boolean justRecord;
+
     public RoomRequest(Long roomId) {
         this.roomId = roomId;
         this.targetTemp = null;
@@ -60,6 +65,7 @@ public class RoomRequest {
         this.servingTime = null;
         this.currentACId = null;
         this.acOn = false;
+        this.justRecord = false;
     }
 
     public int getFanSpeedPriority(){
@@ -91,7 +97,8 @@ public class RoomRequest {
                 " 进入等待队列时间：" + this.waitingTime +
                 " 进入服务队列时间：" + this.servingTime +
                 " 当前服务的空调ID：" + this.currentACId +
-                " 空调是否开启：" + this.acOn;
+                " 空调是否开启：" + this.acOn +
+                " 是否刚完成详单记录：" + this.justRecord;
     }
 
     public void sleep(){
@@ -99,8 +106,6 @@ public class RoomRequest {
         servingTime = null;
         currentACId = null;
         acOn = false;
-    }
-    public void setWaitingTime(LocalDateTime waitingTime){
-        this.waitingTime = LocalDateTime.now();
+        justRecord = false;
     }
 }

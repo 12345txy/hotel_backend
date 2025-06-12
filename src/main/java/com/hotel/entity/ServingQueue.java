@@ -27,13 +27,13 @@ public class ServingQueue extends BaseQueue{
         super.printStatus();
     }
 
-    public String changeTemp(Long roomId, Double targetTemp) {
+    public String changeFanSpeed(Long roomId, String fanSpeed) {
         RoomRequest roomRequest = dequeue(roomId);
         if (roomRequest != null) {
-            roomRequest.setTargetTemp(targetTemp);
+            roomRequest.setFanSpeed(fanSpeed);
             roomRequest.setServingTime(LocalDateTime.now());
             simpleEnqueue(roomRequest);
-            return "温度已调整";
+            return "风速已调整";
         }else{
             return "不存在房间" + roomId + "的请求";
         }
