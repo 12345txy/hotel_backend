@@ -62,6 +62,8 @@ public class ACScheduleServiceImpl implements ACScheduleService {
 
     private void printStatus() {
         log.info("开始打印状态");
+        acService.printStatus();
+        roomService.printStatus();
         servingQueue.printStatus();
         waitingQueue.printStatus();
         // 打印休眠请求
@@ -69,8 +71,6 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         for (Map.Entry<Long, RoomRequest> entry : sleepingRequests.entrySet()) {
             log.info(entry.getValue().getAllInfo());
         }
-        acService.printStatus();
-        roomService.printStatus();
     }
 
     /**
@@ -181,7 +181,12 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             if (oldRequest != null) {
                 result = "房间已请求空调服务";
             } else {
-                // 根据队列创建请求
+                // 判断是否到达温度
+                RoomRequest defaultRequest = acService.initRequest(roomId);
+                if ((room.getCurrentTemp() - defaultRequest.getTargetTemp()) * mode <= 0) {
+                    sleepingRequests.put(roomId, defaultRequest);
+                    result = "已达到目标温度, 进入休眠状态";
+                } else  // 根据队列创建请求
                 if (servingQueue.size() < acCount) {
                     // 添加到服务队列
                     RoomRequest request = acService.startAC(roomId);
@@ -257,31 +262,25 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         try {
             log.info("房间{}请求调整风速", roomId);
             if (servingQueue.checkRoomId(roomId)) {
-                log.info("1");
                 // 请求在服务队列
                 RoomRequest request = servingQueue.getRoomRequest(roomId);
                 if (!acService.changeFanSpeed(request.getCurrentACId(), fanSpeed)) {
-                    log.info("2");
                     result = "空调无法调整至目标风速";
                     log.info(result);
                 } else {
-                    log.info("3");
                     result = servingQueue.changeFanSpeed(roomId, fanSpeed);
                     log.info("{} in serve -fan", result);
                 }
             } else if (waitingQueue.checkRoomId(roomId)) {
-                log.info("4");
                 // 请求在等待队列
                 result = waitingQueue.changeFanSpeed(roomId, fanSpeed);
                 log.info("{} in wait -fan", result);
             } else if (sleepingRequests.get(roomId) != null) {
-                log.info("5");
                 RoomRequest request = sleepingRequests.get(roomId);
                 request.setFanSpeed(fanSpeed);
                 result = "风速已调整";
                 log.info("{} in sleep -fan", result);
             } else {
-                log.info("6");
                 result = "房间未开启空调";
                 log.info(result);
             }

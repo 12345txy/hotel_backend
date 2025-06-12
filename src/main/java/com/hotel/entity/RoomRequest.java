@@ -100,4 +100,7 @@ public class RoomRequest {
         currentACId = null;
         acOn = false;
     }
+    public void setWaitingTime(LocalDateTime waitingTime){
+        this.waitingTime = LocalDateTime.now();
+    }
 }

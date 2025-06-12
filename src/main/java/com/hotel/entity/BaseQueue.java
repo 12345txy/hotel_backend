@@ -15,7 +15,8 @@ public class BaseQueue {
     public BaseQueue() {
         this.queue = new PriorityQueue<>();
     }
-    public void enqueue (RoomRequest roomRequest){
+
+    public void simpleEnqueue(RoomRequest roomRequest){
         queue.add(roomRequest);
     }
 
@@ -67,7 +68,7 @@ public class BaseQueue {
             }
         }
         for (RoomRequest roomRequest : temp) {
-            enqueue(roomRequest);
+            simpleEnqueue(roomRequest);
         }
         return result;
     }
@@ -76,7 +77,7 @@ public class BaseQueue {
         RoomRequest roomRequest = dequeue(roomId);
         if (roomRequest != null) {
             roomRequest.setTargetTemp(targetTemp);
-            enqueue(roomRequest);
+            simpleEnqueue(roomRequest);
             return "温度已调整";
         }else{
             return "不存在房间" + roomId + "的请求";
@@ -87,7 +88,7 @@ public class BaseQueue {
         RoomRequest roomRequest = dequeue(roomId);
         if (roomRequest != null) {
             roomRequest.setFanSpeed(fanSpeed);
-            enqueue(roomRequest);
+            simpleEnqueue(roomRequest);
             return "风速已调整";
         }else{
             return "不存在房间" + roomId + "的请求";

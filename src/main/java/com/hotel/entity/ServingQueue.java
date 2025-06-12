@@ -16,7 +16,7 @@ public class ServingQueue extends BaseQueue{
         super();
         queue = new PriorityQueue<>(
                 Comparator.comparing(RoomRequest::getFanSpeedPriority)
-                        .thenComparing(RoomRequest::getRequestTime, Comparator.reverseOrder())
+                        .thenComparing(RoomRequest::getRequestTime)
                         .thenComparing(RoomRequest::getRoomId, Comparator.reverseOrder())
         );
         this.timeMultiplier = timeMultiplier;
@@ -30,7 +30,7 @@ public class ServingQueue extends BaseQueue{
     public void enqueue(RoomRequest roomRequest) {
         roomRequest.setServingTime(LocalDateTime.now());
         roomRequest.setWaitingTime(null);
-        super.enqueue(roomRequest);
+        simpleEnqueue(roomRequest);
     }
 
     public boolean checkReplace(RoomRequest roomRequest, int timeSlice) {
@@ -49,12 +49,14 @@ public class ServingQueue extends BaseQueue{
         if (candidate.getFanSpeedPriority() == roomRequest.getFanSpeedPriority()){
             // 时间片调度
             Duration duration = Duration.between(roomRequest.getWaitingTime(), LocalDateTime.now());
+            long minutes = duration.toMinutes();
             long seconds = duration.getSeconds() * timeMultiplier;
+            seconds += minutes * 60;
             seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
             log.info("seconds: {}, timeMulti: {}", duration.getSeconds(), timeMultiplier);
-            // 允许误差范围为50秒
+            // 允许5秒误差
             log.info("房间{}等待时间: {}s",  roomRequest.getRoomId(), seconds);
-            return seconds - timeSlice >= -50L;
+            return seconds - timeSlice >= -5;
         }
         return false;
     }

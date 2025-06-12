@@ -1,0 +1,886 @@
+F:\Java\ms-11.0.27\bin\java.exe -XX:TieredStopAtLevel=1 -noverify -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true "-Dmanagement.endpoints.jmx.exposure.include=*" "-javaagent:F:\IntelliJ IDEA 2024.2.4\lib\idea_rt.jar=64019:F:\IntelliJ IDEA 2024.2.4\bin" -Dfile.encoding=UTF-8 -classpath "F:\IntelliJ IDEA Project\hotel_backend\target\classes;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.7.0\spring-boot-starter-web-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter\2.7.0\spring-boot-starter-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot\2.7.0\spring-boot-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.7.0\spring-boot-starter-logging-2.7.0.jar;C:\Users\Ren\.m2\repository\ch\qos\logback\logback-classic\1.2.11\logback-classic-1.2.11.jar;C:\Users\Ren\.m2\repository\ch\qos\logback\logback-core\1.2.11\logback-core-1.2.11.jar;C:\Users\Ren\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.17.2\log4j-to-slf4j-2.17.2.jar;C:\Users\Ren\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;C:\Users\Ren\.m2\repository\org\slf4j\jul-to-slf4j\1.7.36\jul-to-slf4j-1.7.36.jar;C:\Users\Ren\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\Ren\.m2\repository\org\yaml\snakeyaml\1.30\snakeyaml-1.30.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.7.0\spring-boot-starter-json-2.7.0.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.3\jackson-databind-2.13.3.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.3\jackson-annotations-2.13.3.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.3\jackson-core-2.13.3.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.13.3\jackson-datatype-jdk8-2.13.3.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.13.3\jackson-datatype-jsr310-2.13.3.jar;C:\Users\Ren\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.13.3\jackson-module-parameter-names-2.13.3.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.7.0\spring-boot-starter-tomcat-2.7.0.jar;C:\Users\Ren\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.63\tomcat-embed-core-9.0.63.jar;C:\Users\Ren\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.63\tomcat-embed-websocket-9.0.63.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-web\5.3.20\spring-web-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-beans\5.3.20\spring-beans-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-webmvc\5.3.20\spring-webmvc-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-aop\5.3.20\spring-aop-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-context\5.3.20\spring-context-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-expression\5.3.20\spring-expression-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.7.0\spring-boot-starter-data-jpa-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.7.0\spring-boot-starter-aop-2.7.0.jar;C:\Users\Ren\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.7.0\spring-boot-starter-jdbc-2.7.0.jar;C:\Users\Ren\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-jdbc\5.3.20\spring-jdbc-5.3.20.jar;C:\Users\Ren\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\Ren\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\Ren\.m2\repository\org\hibernate\hibernate-core\5.6.9.Final\hibernate-core-5.6.9.Final.jar;C:\Users\Ren\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;C:\Users\Ren\.m2\repository\net\bytebuddy\byte-buddy\1.12.10\byte-buddy-1.12.10.jar;C:\Users\Ren\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Ren\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;C:\Users\Ren\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Ren\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Ren\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.6\jaxb-runtime-2.3.6.jar;C:\Users\Ren\.m2\repository\org\glassfish\jaxb\txw2\2.3.6\txw2-2.3.6.jar;C:\Users\Ren\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12\istack-commons-runtime-3.0.12.jar;C:\Users\Ren\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\Ren\.m2\repository\org\springframework\data\spring-data-jpa\2.7.0\spring-data-jpa-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\data\spring-data-commons\2.7.0\spring-data-commons-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-orm\5.3.20\spring-orm-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-tx\5.3.20\spring-tx-5.3.20.jar;C:\Users\Ren\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-aspects\5.3.20\spring-aspects-5.3.20.jar;C:\Users\Ren\.m2\repository\mysql\mysql-connector-java\8.0.29\mysql-connector-java-8.0.29.jar;C:\Users\Ren\.m2\repository\com\baomidou\mybatis-plus-boot-starter\3.5.2\mybatis-plus-boot-starter-3.5.2.jar;C:\Users\Ren\.m2\repository\com\baomidou\mybatis-plus\3.5.2\mybatis-plus-3.5.2.jar;C:\Users\Ren\.m2\repository\com\baomidou\mybatis-plus-extension\3.5.2\mybatis-plus-extension-3.5.2.jar;C:\Users\Ren\.m2\repository\com\baomidou\mybatis-plus-core\3.5.2\mybatis-plus-core-3.5.2.jar;C:\Users\Ren\.m2\repository\com\baomidou\mybatis-plus-annotation\3.5.2\mybatis-plus-annotation-3.5.2.jar;C:\Users\Ren\.m2\repository\com\github\jsqlparser\jsqlparser\4.4\jsqlparser-4.4.jar;C:\Users\Ren\.m2\repository\org\mybatis\mybatis\3.5.10\mybatis-3.5.10.jar;C:\Users\Ren\.m2\repository\org\mybatis\mybatis-spring\2.0.7\mybatis-spring-2.0.7.jar;C:\Users\Ren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.6.21\kotlin-stdlib-jdk8-1.6.21.jar;C:\Users\Ren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.6.21\kotlin-stdlib-1.6.21.jar;C:\Users\Ren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.6.21\kotlin-stdlib-common-1.6.21.jar;C:\Users\Ren\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Ren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.6.21\kotlin-stdlib-jdk7-1.6.21.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.7.0\spring-boot-autoconfigure-2.7.0.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-starter-validation\2.7.0\spring-boot-starter-validation-2.7.0.jar;C:\Users\Ren\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.63\tomcat-embed-el-9.0.63.jar;C:\Users\Ren\.m2\repository\org\hibernate\validator\hibernate-validator\6.2.3.Final\hibernate-validator-6.2.3.Final.jar;C:\Users\Ren\.m2\repository\jakarta\validation\jakarta.validation-api\2.0.2\jakarta.validation-api-2.0.2.jar;C:\Users\Ren\.m2\repository\org\springframework\boot\spring-boot-configuration-processor\2.7.0\spring-boot-configuration-processor-2.7.0.jar;C:\Users\Ren\.m2\repository\org\projectlombok\lombok\1.18.24\lombok-1.18.24.jar;C:\Users\Ren\.m2\repository\com\alibaba\fastjson\2.0.25\fastjson-2.0.25.jar;C:\Users\Ren\.m2\repository\com\alibaba\fastjson2\fastjson2-extension\2.0.25\fastjson2-extension-2.0.25.jar;C:\Users\Ren\.m2\repository\com\alibaba\fastjson2\fastjson2\2.0.25\fastjson2-2.0.25.jar;C:\Users\Ren\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\Ren\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-core\5.3.20\spring-core-5.3.20.jar;C:\Users\Ren\.m2\repository\org\springframework\spring-jcl\5.3.20\spring-jcl-5.3.20.jar" com.hotel.HotelAcSystemApplication
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.0)
+
+2025-06-12 12:37:46.327  INFO 6228 --- [           main] com.hotel.HotelAcSystemApplication       : Starting HotelAcSystemApplication using Java 11.0.27 on HP-Ren with PID 6228 (F:\IntelliJ IDEA Project\hotel_backend\target\classes started by Ren in F:\IntelliJ IDEA Project\hotel_backend)
+2025-06-12 12:37:46.330  INFO 6228 --- [           main] com.hotel.HotelAcSystemApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-06-12 12:37:46.793  INFO 6228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-12 12:37:46.803  INFO 6228 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-12 12:37:47.075  INFO 6228 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-12 12:37:47.080  INFO 6228 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-12 12:37:47.080  INFO 6228 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-12 12:37:47.147  INFO 6228 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-12 12:37:47.147  INFO 6228 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 778 ms
+2025-06-12 12:37:47.189  WARN 6228 --- [           main] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2025-06-12 12:37:47.286  INFO 6228 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-12 12:37:47.310  INFO 6228 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-06-12 12:37:47.385  INFO 6228 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-06-12 12:37:47.428  INFO 6228 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-06-12 12:37:47.492  INFO 6228 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-06-12 12:37:47.497  INFO 6228 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+ _ _   |_  _ _|_. ___ _ |    _
+| | |\/|_)(_| | |_\  |_)||_|_\
+     /               |
+                        3.5.2
+2025-06-12 12:37:48.288  INFO 6228 --- [           main] com.hotel.service.impl.ACServiceImpl     : 初始化3个空调
+2025-06-12 12:37:48.354  WARN 6228 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-12 12:37:48.580  INFO 6228 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-12 12:37:48.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余3个位置
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:37:48.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:37:48.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:37:48.590  INFO 6228 --- [           main] com.hotel.HotelAcSystemApplication       : Started HotelAcSystemApplication in 2.518 seconds (JVM running for 3.376)
+2025-06-12 12:37:48.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:48.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:48.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:48.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：32.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:37:48.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:37:48.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:37:48.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:37:48.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：35.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:37:53.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:37:53.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:37:53.603  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:37:53.604  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余3个位置
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:37:53.605  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:37:53.607  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:37:53.607  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:53.607  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：32.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:37:53.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：35.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:37:54.893  INFO 6228 --- [nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-12 12:37:54.893  INFO 6228 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-12 12:37:54.895  INFO 6228 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-12 12:37:54.965  INFO 6228 --- [nio-8080-exec-3] c.h.service.impl.ACScheduleServiceImpl   : 房间1请求空调服务
+2025-06-12 12:37:58.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:37:58.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余2个位置
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:37:58.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:37:58.607  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:37:54.965161400 进入服务队列时间：2025-06-12T12:37:54.965161400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 1, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: null, fanSpeed: null
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：32.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:37:58.608  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：35.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:00.012  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 房间2请求空调服务
+2025-06-12 12:38:00.032  INFO 6228 --- [nio-8080-exec-7] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求空调服务
+2025-06-12 12:38:00.047  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 房间1请求调整温度
+2025-06-12 12:38:00.047  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:03.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：M 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:37:54.965161400 进入服务队列时间：2025-06-12T12:37:54.965161400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:00.032404 进入服务队列时间：2025-06-12T12:38:00.032404 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:00.012757400 进入等待队列时间：2025-06-12T12:38:00.012757400 进入服务队列时间：2025-06-12T12:38:00.012757400 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: M
+2025-06-12 12:38:03.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 5, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：31.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：35.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:05.080  INFO 6228 --- [nio-8080-exec-1] c.h.service.impl.ACScheduleServiceImpl   : 房间3请求空调服务
+2025-06-12 12:38:08.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 3, timeMulti: 12
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间3等待时间: 42s
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:08.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:08.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:08.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:08.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:08.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：M 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:37:54.965161400 进入服务队列时间：2025-06-12T12:37:54.965161400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:08.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:00.032404 进入服务队列时间：2025-06-12T12:38:00.032404 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:08.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:00.012757400 进入等待队列时间：2025-06-12T12:38:00.012757400 进入服务队列时间：2025-06-12T12:38:00.012757400 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:08.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:08.596  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:05.080361500 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:08.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:08.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: M
+2025-06-12 12:38:08.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:08.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 5, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：31.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：34.5 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:10.101  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 房间2请求调整温度
+2025-06-12 12:38:10.101  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:38:10.114  INFO 6228 --- [io-8080-exec-10] c.h.service.impl.ACScheduleServiceImpl   : 房间4请求空调服务
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:13.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 8, timeMulti: 12
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间3等待时间: 102s
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：M 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:37:54.965161400 进入服务队列时间：2025-06-12T12:37:54.965161400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:00.032404 进入服务队列时间：2025-06-12T12:38:00.032404 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：19.0 风速：M 请求时间：2025-06-12T12:38:00.012757400 进入等待队列时间：2025-06-12T12:38:00.012757400 进入服务队列时间：2025-06-12T12:38:00.012757400 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:05.080361500 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:10.114969400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:13.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: M
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 19.0, fanSpeed: M
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 5, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：30.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:13.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：34.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:15.184  INFO 6228 --- [nio-8080-exec-9] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整温度
+2025-06-12 12:38:15.184  INFO 6228 --- [nio-8080-exec-9] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:18.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 13, timeMulti: 12
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间3等待时间: 162s
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间3换入, 房间1换出
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 8, timeMulti: 12
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间4等待时间: 101s
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：19.0 风速：M 请求时间：2025-06-12T12:38:00.012757400 进入等待队列时间：2025-06-12T12:38:00.012757400 进入服务队列时间：2025-06-12T12:38:00.012757400 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:00.032404 进入服务队列时间：2025-06-12T12:38:00.032404 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:18.597339900 进入服务队列时间：2025-06-12T12:38:18.597339900 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:10.114969400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:18.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：M 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:18.597339900 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 3, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 19.0, fanSpeed: M
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: M
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：30.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：26.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:18.598  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：33.5 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:20.288  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 房间1请求调整风速
+2025-06-12 12:38:20.288  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in wait -fan
+2025-06-12 12:38:23.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间1换入, 房间2换出
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 13, timeMulti: 12
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间4等待时间: 161s
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间4换入, 房间5换出
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 0, timeMulti: 12
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间2等待时间: 0s
+2025-06-12 12:38:23.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2已停止服务
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3已停止服务
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:18.597339900 进入服务队列时间：2025-06-12T12:38:18.597339900 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:23.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：19.0 风速：M 请求时间：2025-06-12T12:38:00.012757400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 3, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：30.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：26.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.5 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：29.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:23.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：33.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:25.393  INFO 6228 --- [nio-8080-exec-6] c.h.service.impl.ACScheduleServiceImpl   : 房间2关闭空调服务
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 4, timeMulti: 12
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间5等待时间: 59s
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:18.597339900 进入服务队列时间：2025-06-12T12:38:18.597339900 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:28.586  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 3, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：29.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：26.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：28.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:28.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：33.5 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:30.497  INFO 6228 --- [nio-8080-exec-3] c.h.service.impl.ACScheduleServiceImpl   : 房间2请求空调服务
+2025-06-12 12:38:30.543  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整风速
+2025-06-12 12:38:30.543  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in wait -fan
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:33.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间5换入, 房间3换出
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 3, timeMulti: 12
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间2等待时间: 37s
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:33.601  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：2025-06-12T12:38:33.601545400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:30.498782300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：28.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：28.5 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：28.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:33.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：34.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:38.598  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 8, timeMulti: 12
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间2等待时间: 97s
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：18.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：2025-06-12T12:38:33.601545400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:30.498782300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:38:38.599  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：27.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:38.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:38.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:38.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：27.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:38.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：33.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:40.678  INFO 6228 --- [nio-8080-exec-7] c.h.service.impl.ACScheduleServiceImpl   : 房间1请求调整温度
+2025-06-12 12:38:40.678  INFO 6228 --- [nio-8080-exec-7] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:38:40.725  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 房间4请求调整温度
+2025-06-12 12:38:40.725  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:38:40.772  INFO 6228 --- [nio-8080-exec-1] c.h.service.impl.ACScheduleServiceImpl   : 房间4请求调整风速
+2025-06-12 12:38:40.772  INFO 6228 --- [nio-8080-exec-1] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:38:43.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:43.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:43.599  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：22.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：2025-06-12T12:38:33.601545400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:43.600  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:30.498782300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:43.601  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:43.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:43.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:43.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：26.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.5 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：27.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:43.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：32.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:48.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：22.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：2025-06-12T12:38:33.601545400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:48.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:30.498782300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：25.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：26.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:48.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：31.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:50.929  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 房间2请求调整温度
+2025-06-12 12:38:50.929  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in wait -temp
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：22.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：2025-06-12T12:38:33.601545400 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:30.498782300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:53.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：24.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:53.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:53.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:53.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：25.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:53.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：30.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:38:56.047  INFO 6228 --- [io-8080-exec-10] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整风速
+2025-06-12 12:38:56.047  INFO 6228 --- [io-8080-exec-10] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:38:58.600  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间2换入, 房间5换出
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:38:58.601  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:38:58.601991300 进入服务队列时间：2025-06-12T12:38:58.601991300 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：22.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:38:33.601545400 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：L 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:58.601991300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 2, on: true, targetTemp: 22.0, fanSpeed: M
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：23.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：24.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:38:58.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：29.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:03.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 29, timeMulti: 12
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间3等待时间: 359s
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间3换入, 房间2换出
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:03.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：25.0 风速：M 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:03.595826600 进入服务队列时间：2025-06-12T12:39:03.595826600 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：22.0 风速：H 请求时间：2025-06-12T12:37:54.965161400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:39:03.595826600 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：L 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:38:58.601991300 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 3, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 1, on: true, targetTemp: 22.0, fanSpeed: H
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：22.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：23.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:03.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：29.5 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:06.210  INFO 6228 --- [nio-8080-exec-9] c.h.service.impl.ACScheduleServiceImpl   : 房间1关闭空调服务
+2025-06-12 12:39:06.270  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 房间3请求调整温度
+2025-06-12 12:39:06.270  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:39:06.319  INFO 6228 --- [nio-8080-exec-6] c.h.service.impl.ACScheduleServiceImpl   : 房间3请求调整风速
+2025-06-12 12:39:06.319  INFO 6228 --- [nio-8080-exec-6] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余1个位置
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间2已加入服务队列
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : seconds: 10, timeMulti: 12
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 房间5等待时间: 120s
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 发生置换, 房间5换入, 房间3换出
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2已停止服务
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：22.0 风速：L 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:08.602  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：L 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 22.0, fanSpeed: L
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 22.0, fanSpeed: M
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：21.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.5 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：22.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:08.603  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：30.0 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:11.431  INFO 6228 --- [nio-8080-exec-3] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整温度
+2025-06-12 12:39:11.431  INFO 6228 --- [nio-8080-exec-3] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:39:11.510  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整风速
+2025-06-12 12:39:11.510  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：22.0 风速：M 请求时间：2025-06-12T12:38:30.498782300 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：20.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：L 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 20.0, fanSpeed: H
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 2, on: true, targetTemp: 22.0, fanSpeed: M
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：22.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：21.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:13.595  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：29.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:16.583  INFO 6228 --- [nio-8080-exec-7] c.h.service.impl.ACScheduleServiceImpl   : 房间2关闭空调服务
+2025-06-12 12:39:18.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:18.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:18.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:18.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:18.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余1个位置
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间3已加入服务队列
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2已停止服务
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：L 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：20.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 20.0, fanSpeed: H
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: L
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：22.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：30.0 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:18.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：20.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:18.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：28.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:21.687  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 房间3请求调整风速
+2025-06-12 12:39:21.687  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：20.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：18.0 风速：H 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:38:23.589652600 进入服务队列时间：2025-06-12T12:38:23.590727600 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：H 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 20.0, fanSpeed: H
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 4, on: true, targetTemp: 18.0, fanSpeed: H
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：23.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:23.587  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：29.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:23.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：19.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:23.588  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：27.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:26.772  INFO 6228 --- [nio-8080-exec-1] c.h.service.impl.ACScheduleServiceImpl   : 房间1请求空调服务
+2025-06-12 12:39:26.835  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 房间4请求调整温度
+2025-06-12 12:39:26.835  INFO 6228 --- [nio-8080-exec-5] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:39:26.929  INFO 6228 --- [io-8080-exec-10] c.h.service.impl.ACScheduleServiceImpl   : 房间4请求调整风速
+2025-06-12 12:39:26.929  INFO 6228 --- [io-8080-exec-10] c.h.service.impl.ACScheduleServiceImpl   : 风速已调整 in serve -fan
+2025-06-12 12:39:28.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:28.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:28.595  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间4已满足要求，进入休眠队列
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余1个位置
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3已停止服务
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：20.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：H 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 20.0, fanSpeed: H
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: 20.0, fanSpeed: M
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：23.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：28.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：18.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:28.596  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：26.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:32.054  INFO 6228 --- [nio-8080-exec-9] c.h.service.impl.ACScheduleServiceImpl   : 房间2请求空调服务
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余0个位置
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:33.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：H 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：5 目标温度：20.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：2025-06-12T12:39:08.602474200 进入服务队列时间：2025-06-12T12:39:08.602474200 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 5, on: true, targetTemp: 20.0, fanSpeed: H
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：24.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：28.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：27.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：18.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:33.591  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：25.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:37.097  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 房间5请求调整温度
+2025-06-12 12:39:37.097  INFO 6228 --- [nio-8080-exec-8] c.h.service.impl.ACScheduleServiceImpl   : 温度已调整 in serve -temp
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间5已满足要求，进入休眠队列
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余1个位置
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：H 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：5 目标温度：25.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: 25.0, fanSpeed: H
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：24.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：26.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：19.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:38.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：24.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:43.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:43.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:43.591  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余1个位置
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:43.592  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：3 目标温度：24.0 风速：H 请求时间：2025-06-12T12:38:05.080361500 进入等待队列时间：2025-06-12T12:39:18.589673 进入服务队列时间：2025-06-12T12:39:18.590780600 当前服务的空调ID：2 空调是否开启：true
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：5 目标温度：25.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: 25.0, fanSpeed: H
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: 3, on: true, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：25.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：27.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：25.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：19.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:43.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：25.17 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:47.252  INFO 6228 --- [nio-8080-exec-6] c.h.service.impl.ACScheduleServiceImpl   : 房间3关闭空调服务
+2025-06-12 12:39:48.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:48.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:48.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:48.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余2个位置
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2已停止服务
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：5 目标温度：25.0 风速：H 请求时间：2025-06-12T12:38:00.032404 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: 25.0, fanSpeed: H
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：25.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：26.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：24.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：20.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:48.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：25.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:52.349  INFO 6228 --- [nio-8080-exec-3] c.h.service.impl.ACScheduleServiceImpl   : 房间5关闭空调服务
+2025-06-12 12:39:53.592  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间1已加入等待队列
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余2个位置
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间1已加入服务队列
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:53.593  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：1 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:26.772720900 进入等待队列时间：2025-06-12T12:39:53.593441600 进入服务队列时间：2025-06-12T12:39:53.593441600 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：null 进入服务队列时间：null 当前服务的空调ID：null 空调是否开启：false
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 1, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：26.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：26.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：25.17 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：20.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:53.594  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：26.17 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:39:57.456  INFO 6228 --- [nio-8080-exec-2] c.h.service.impl.ACScheduleServiceImpl   : 房间1关闭空调服务
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间4已加入等待队列
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余2个位置
+2025-06-12 12:39:58.588  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 房间4已加入服务队列
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：4 目标温度：20.0 风速：M 请求时间：2025-06-12T12:38:10.114969400 进入等待队列时间：2025-06-12T12:39:58.588085 进入服务队列时间：2025-06-12T12:39:58.589417600 当前服务的空调ID：1 空调是否开启：true
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.BaseQueue               : 房间ID：2 目标温度：25.0 风速：M 请求时间：2025-06-12T12:39:32.054803100 进入等待队列时间：2025-06-12T12:39:32.054803100 进入服务队列时间：2025-06-12T12:39:32.054803100 当前服务的空调ID：3 空调是否开启：true
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: 4, on: true, targetTemp: 20.0, fanSpeed: M
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: 2, on: true, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：25.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：25.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：25.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：21.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:39:58.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：26.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:40:02.596  INFO 6228 --- [nio-8080-exec-7] c.h.service.impl.ACScheduleServiceImpl   : 房间2关闭空调服务
+2025-06-12 12:40:02.639  INFO 6228 --- [nio-8080-exec-4] c.h.service.impl.ACScheduleServiceImpl   : 房间4关闭空调服务
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余3个位置
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:40:03.589  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1已停止服务
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3已停止服务
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: 20.0, fanSpeed: M
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：26.0 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：25.0 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：26.17 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：20.5 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:40:03.590  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：27.17 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:40:08.596  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : tick
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始调度
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 移除服务队列中达到目标温度的房间
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 查看是否有恢复请求的房间
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 服务队列剩余3个位置
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始检查置换
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 更新空调状态
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 关闭空调
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 启动未服务请求
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 调度完成
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 开始打印状态
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.ServingQueue            : 服务队列:
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.entity.WaitingQueue            : 等待队列:
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] c.h.service.impl.ACScheduleServiceImpl   : 休眠请求：
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调1状态: id: 1, servingRoomId: null, on: false, targetTemp: 20.0, fanSpeed: M
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调2状态: id: 2, servingRoomId: null, on: false, targetTemp: 24.0, fanSpeed: H
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.ACServiceImpl     : 空调3状态: id: 3, servingRoomId: null, on: false, targetTemp: 25.0, fanSpeed: M
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间1状态: 房间号：1 房间温度：26.5 房间默认温度：32.0 房间日费：100.0
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间2状态: 房间号：2 房间温度：25.5 房间默认温度：28.0 房间日费：125.0
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间3状态: 房间号：3 房间温度：26.67 房间默认温度：30.0 房间日费：150.0
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间4状态: 房间号：4 房间温度：21.0 房间默认温度：29.0 房间日费：200.0
+2025-06-12 12:40:08.597  INFO 6228 --- [   scheduling-1] com.hotel.service.impl.RoomServiceImpl   : 房间5状态: 房间号：5 房间温度：27.67 房间默认温度：35.0 房间日费：100.0
+2025-06-12 12:40:10.558  INFO 6228 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+进程已结束，退出代码为 130
