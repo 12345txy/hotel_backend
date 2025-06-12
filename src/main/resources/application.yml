@@ -61,7 +61,7 @@ hotel:
     default-temp: 25 # 默认温度
     time-slice: 120 # 时间片轮转时间(秒)
     heating-rate: 0.5 # 升温速度(度/分钟)
-    mode: -1 # 制冷为1 制热为-1    todo:需要配置
+    mode: 1 # 制冷为1 制热为-1    todo:需要配置
     wake-up-temp: 1 # 唤醒请求的温度差
   billing:
     room-rate: 100.0 # 房费(元/天)

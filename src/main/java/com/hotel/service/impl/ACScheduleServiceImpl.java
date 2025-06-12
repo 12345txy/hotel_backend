@@ -268,6 +268,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                     result = "空调无法调整至目标风速";
                     log.info(result);
                 } else {
+                    // todo: 记录详单
                     result = servingQueue.changeFanSpeed(roomId, fanSpeed);
                     log.info("{} in serve -fan", result);
                 }
@@ -318,5 +319,15 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         }
 
         return result;
+    }
+
+    @Override
+    public List<RoomRequest> getServingQueue() {
+        return new ArrayList<>(servingQueue.getQueue());
+    }
+
+    @Override
+    public List<RoomRequest> getWaitingQueue() {
+        return new ArrayList<>(waitingQueue.getQueue());
     }
 }

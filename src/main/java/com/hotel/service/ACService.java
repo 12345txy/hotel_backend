@@ -1,5 +1,6 @@
 package com.hotel.service;
 
+import com.hotel.entity.AirConditioner;
 import com.hotel.entity.Room;
 import com.hotel.entity.RoomRequest;
 
@@ -17,4 +18,5 @@ public interface ACService {
     boolean changeFanSpeed(Long acId, String fanSpeed);
     void tick();
     void update(List<RoomRequest> servingRooms);
+    AirConditioner getACByRoomId(Long roomId);
 }

@@ -3,6 +3,7 @@ package com.hotel.service;
 import com.hotel.entity.Room;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 房间服务对象
@@ -32,5 +33,7 @@ public interface RoomService {
      * @param increaseTemp 升温温度
      */
     void heatingRooms(List<Long> excludeRoomIds, Double increaseTemp);
+
+    Map<Long, Room> getAllRooms();
 
 }

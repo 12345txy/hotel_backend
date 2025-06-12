@@ -1,5 +1,9 @@
 package com.hotel.service;
 
+import com.hotel.entity.RoomRequest;
+
+import java.util.List;
+
 /**
  * 空调调度服务
  * 实现风速优先+时间片轮转的调度策略
@@ -39,4 +43,7 @@ public interface ACScheduleService {
      * @return 停止结果
      */
     String stopAC(Long roomId);
+
+    List<RoomRequest> getServingQueue();
+    List<RoomRequest> getWaitingQueue();
 } 
