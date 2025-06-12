@@ -145,4 +145,14 @@ public class ACServiceImpl implements ACService {
         }
 
     }
+    @Override
+    public AirConditioner getACByRoomId(Long roomId) {
+        for (AirConditioner ac : acs.values()) {
+            if (ac.getOn() && roomId.equals(ac.getServingRoomId())) {
+                return ac;
+            }
+        }
+        return null;
+    }
+
 }

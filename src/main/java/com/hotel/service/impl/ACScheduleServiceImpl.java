@@ -320,4 +320,14 @@ public class ACScheduleServiceImpl implements ACScheduleService {
 
         return result;
     }
+    @Override
+    public List<RoomRequest> getServingQueue() {
+        return new ArrayList<>(servingQueue.getQueue());
+    }
+
+    @Override
+    public List<RoomRequest> getWaitingQueue() {
+        return new ArrayList<>(waitingQueue.getQueue());
+    }
+
 }

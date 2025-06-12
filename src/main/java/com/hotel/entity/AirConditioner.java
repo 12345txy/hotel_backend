@@ -87,56 +87,6 @@ public class AirConditioner {
      */
     private String fanSpeed;
 
-//    /**
-//     * 当前温度
-//     */
-//    private Double currentTemp;
-//
-//    /**
-//     * 请求时间
-//     */
-//    private LocalDateTime requestTime;
-//
-//    /**
-//     * 服务开始时间
-//     */
-//    private LocalDateTime serviceStartTime;
-//
-//    /**
-//     * 服务结束时间
-//     */
-//    private LocalDateTime serviceEndTime;
-//
-//    /**
-//     * 服务时长(分钟)
-//     */
-//    private Long serviceDuration;
-//
-//    /**
-//     * 当前费用
-//     */
-//    private Double cost;
-//
-//    /**
-//     * 优先级(基于风速)
-//     */
-//    private Integer priority;
-//
-//    /**
-//     * 服务时间(分钟)
-//     */
-//    private Long serviceTime;
-//
-//    /**
-//     * 创建时间
-//     */
-//    private LocalDateTime createTime;
-//
-//    /**
-//     * 更新时间
-//     */
-//    private LocalDateTime updateTime;
-
     /**
      * 构造函数
      * @param acConfig 空调配置对象
