@@ -56,6 +56,11 @@ public class RoomRequest {
      */
     private Boolean justRecord;
 
+    /**
+     * 系统时间刻
+     */
+    private int tick;
+
     public RoomRequest(Long roomId) {
         this.roomId = roomId;
         this.targetTemp = null;
@@ -66,6 +71,7 @@ public class RoomRequest {
         this.currentACId = null;
         this.acOn = false;
         this.justRecord = false;
+        this.tick = 0;
     }
 
     public int getFanSpeedPriority(){

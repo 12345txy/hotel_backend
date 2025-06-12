@@ -70,7 +70,7 @@ public class BillDetailServiceImpl extends ServiceImpl<BillDetailMapper, BillDet
     }
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public BillDetail createBillDetailByRequest(RoomRequest request, String detailType, int mode) {
+    public BillDetail createBillDetailByRequest(RoomRequest request, String detailType, int mode, int tick) {
         // 参数校验
         Assert.notNull(request, "房间请求不能为空");
         Assert.notNull(request.getRoomId(), "房间ID不能为空");
@@ -91,16 +91,18 @@ public class BillDetailServiceImpl extends ServiceImpl<BillDetailMapper, BillDet
         billDetail.setEndTime(LocalDateTime.now());
         billDetail.setDetailType(detailType);
         billDetail.setRequestTime(request.getRequestTime());
-        // 计算持续时间（秒）
-        Duration duration = Duration.between(request.getServingTime(), LocalDateTime.now());
-        long seconds = duration.getSeconds() * timeMultiplier;
-//            seconds += minutes * 60;
-        seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
-//        if(seconds<35){
-//            return null;
-//        }
-        billDetail.setDuration(seconds);
-
+//        // 计算持续时间（秒）
+//        Duration duration = Duration.between(request.getServingTime(), LocalDateTime.now());
+//        long seconds = duration.getSeconds() * timeMultiplier;
+////            seconds += minutes * 60;
+//        seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
+////        if(seconds<35){
+////            return null;
+////        }
+//        billDetail.setDuration(seconds);
+        // 计算持续时间（分钟）
+        int duration = tick - request.getTick();
+        billDetail.setDuration((long)duration);
 
         // 设置费率
         double rate;
@@ -120,7 +122,7 @@ public class BillDetailServiceImpl extends ServiceImpl<BillDetailMapper, BillDet
         billDetail.setRate(rate);
         billDetail.setCreateTime(LocalDateTime.now());
         // 计算费用
-        billDetail.setCost(rate * seconds);
+        billDetail.setCost(rate * duration);
 
         // 保存到数据库
         boolean success = save(billDetail);

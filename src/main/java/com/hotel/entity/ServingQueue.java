@@ -27,11 +27,13 @@ public class ServingQueue extends BaseQueue{
         super.printStatus();
     }
 
-    public String changeFanSpeed(Long roomId, String fanSpeed) {
+    public String changeFanSpeed(Long roomId, String fanSpeed, int timeTick) {
         RoomRequest roomRequest = dequeue(roomId);
         if (roomRequest != null) {
             roomRequest.setFanSpeed(fanSpeed);
             roomRequest.setServingTime(LocalDateTime.now());
+            roomRequest.setWaitingTime(null);
+            roomRequest.setTick(timeTick);
             simpleEnqueue(roomRequest);
             return "风速已调整";
         }else{
@@ -39,9 +41,10 @@ public class ServingQueue extends BaseQueue{
         }
     }
 
-    public void enqueue(RoomRequest roomRequest) {
+    public void enqueue(RoomRequest roomRequest, int timeTick) {
         roomRequest.setServingTime(LocalDateTime.now());
         roomRequest.setWaitingTime(null);
+        roomRequest.setTick(timeTick);
         simpleEnqueue(roomRequest);
     }
 

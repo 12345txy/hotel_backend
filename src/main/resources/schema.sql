@@ -118,7 +118,8 @@ CREATE TABLE ac_config (
 # ) COMMENT '账单主表';
 
 # 账单详单表
-CREATE TABLE IF NOT EXISTS bill_details (
+DROP TABLE IF EXISTS bill_details;
+CREATE TABLE bill_details(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     room_id BIGINT NOT NULL COMMENT '房间ID',
     ac_mode VARCHAR(20) COMMENT '空调模式',

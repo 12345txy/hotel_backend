@@ -33,6 +33,6 @@ public interface BillDetailService {
      * @param mode 空调模式 (1:制冷, -1:制热)
      * @return 创建的账单详单
      */
-    BillDetail createBillDetailByRequest(RoomRequest request, String detailType, int mode);
+    BillDetail createBillDetailByRequest(RoomRequest request, String detailType, int mode ,int tick);
 }
 

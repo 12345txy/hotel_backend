@@ -6,6 +6,7 @@ import com.hotel.service.ACService;
 import com.hotel.service.BillDetailService;
 import com.hotel.service.RoomService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,6 +16,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 @Service
@@ -23,6 +27,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
     private final ACService acService;
     private final RoomService roomService;
     private final BillDetailService billDetailService;
+    private final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
     @Value("${hotel.ac.total-count}")
     private int acCount;
@@ -42,10 +47,16 @@ public class ACScheduleServiceImpl implements ACScheduleService {
     @Value("${hotel.time-multiplier}")
     private int timeMultiplier;
 
+    @Value("${hotel.tick-time}")
+    private int tickTime;
+
+    private int globalTick;
+
     private final ReentrantLock scheduleLock = new ReentrantLock();
     private ServingQueue servingQueue;
     private final WaitingQueue waitingQueue = new WaitingQueue();
     private final Map<Long, RoomRequest> sleepingRequests = new HashMap<>();
+    private boolean isRunning = false;
 
 
     @Autowired
@@ -53,6 +64,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         this.acService = acService;
         this.roomService = roomService;
         this.billDetailService = billDetailService;
+        this.globalTick = 0;
     }
 
     @PostConstruct
@@ -88,7 +100,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             if ((room.getCurrentTemp() - request.getTargetTemp()) * mode <= 0) {
                 RoomRequest sleepingRequest = servingQueue.dequeue(roomId);
                 // todo: 记录详单
-                BillDetail detail = billDetailService.createBillDetailByRequest(request, "TARGET_REACHED", mode);
+                BillDetail detail = billDetailService.createBillDetailByRequest(request, "TARGET_REACHED", mode, globalTick);
 //                billDetailService.saveBillDetail(detail);
 
                 request.sleep();
@@ -115,7 +127,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         while (servingQueue.size() < acCount) {
             if (waitingQueue.size() > 0) {
                 RoomRequest request = waitingQueue.dequeue();
-                servingQueue.enqueue(request);
+                servingQueue.enqueue(request, globalTick);
                 log.info("房间{}已加入服务队列", request.getRoomId());
             } else {
                 break;
@@ -129,11 +141,11 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                 waitingQueue.dequeue();
                 RoomRequest waitingRequest = servingQueue.dequeue();
                 // todo: 记录详单
-                BillDetail  detail = billDetailService.createBillDetailByRequest(waitingRequest, "SCHEDULE", mode);
+                BillDetail  detail = billDetailService.createBillDetailByRequest(waitingRequest, "SCHEDULE", mode, globalTick);
 //                billDetailService.saveBillDetail(detail);
 
                 waitingQueue.enqueue(waitingRequest);
-                servingQueue.enqueue(request);
+                servingQueue.enqueue(request, globalTick);
                 log.info("发生置换, 房间{}换入, 房间{}换出",
                         request.getRoomId(), waitingRequest.getRoomId());
             } else {
@@ -156,11 +168,15 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         log.info("调度完成");
     }
 
+    private void startTick() {
+        Runnable task = this::tick;
+        executor.scheduleAtFixedRate(task, 4500, tickTime, TimeUnit.MILLISECONDS);
+    }
+
     /**
      * 实现系统时钟
      * 每5秒执行一次
      */
-    @Scheduled(fixedRateString = "${hotel.tick-time}")
     private void tick() {
         log.info("tick");
         scheduleLock.lock();
@@ -174,6 +190,8 @@ public class ACScheduleServiceImpl implements ACScheduleService {
         // 房间升温
         List<Long> servingRoomIds = servingQueue.getAllRoomIds();
         roomService.heatingRooms(servingRoomIds, heatingRate);
+        // 全局时间增加
+        globalTick++;
 
         scheduleLock.unlock();
     }
@@ -185,6 +203,11 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             return "房间不存在";
         }
         String result;
+
+        if (!isRunning){
+            isRunning = true;
+            startTick();
+        }
 
         scheduleLock.lock();
         try {
@@ -209,7 +232,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                     if (request == null) {
                         return "无法启动空调";
                     }
-                    servingQueue.enqueue(request);
+                    servingQueue.enqueue(request, globalTick);
                     result = "空调已启动";
                 } else {
                     // 添加到等待队列
@@ -285,10 +308,10 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                     log.info(result);
                 } else {
                     // todo: 记录详单
-                    BillDetail detail = billDetailService.createBillDetailByRequest(request, "ADJUST_FAN", mode);
+                    BillDetail detail = billDetailService.createBillDetailByRequest(request, "ADJUST_FAN", mode, globalTick);
 //                    billDetailService.saveBillDetail(detail);
 
-                    result = servingQueue.changeFanSpeed(roomId, fanSpeed);
+                    result = servingQueue.changeFanSpeed(roomId, fanSpeed, globalTick);
                     log.info("{} in serve -fan", result);
                 }
             } else if (waitingQueue.checkRoomId(roomId)) {
@@ -325,7 +348,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
             RoomRequest request = servingQueue.getRoomRequest(roomId);
             if (request != null) {
                 // todo: 记录详单
-                BillDetail detail = billDetailService.createBillDetailByRequest(request, "AC_OFF", mode);
+                BillDetail detail = billDetailService.createBillDetailByRequest(request, "AC_OFF", mode, globalTick);
 //                billDetailService.saveBillDetail(detail);
 
                 // 从服务队列中移除并记录详单
