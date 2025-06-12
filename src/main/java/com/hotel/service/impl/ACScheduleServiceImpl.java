@@ -14,6 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
@@ -39,8 +40,11 @@ public class ACScheduleServiceImpl implements ACScheduleService {
     @Value("${hotel.ac.wake-up-temp}")
     private double wakeUpTemp;
 
+    @Value("${hotel.time-multiplier}")
+    private int timeMultiplier;
+
     private final ReentrantLock scheduleLock = new ReentrantLock();
-    private final ServingQueue servingQueue = new ServingQueue();
+    private ServingQueue servingQueue;
     private final WaitingQueue waitingQueue = new WaitingQueue();
     private final Map<Long, RoomRequest> sleepingRequests = new HashMap<>();
 
@@ -49,6 +53,11 @@ public class ACScheduleServiceImpl implements ACScheduleService {
     public ACScheduleServiceImpl(ACService acService, RoomService roomService) {
         this.acService = acService;
         this.roomService = roomService;
+    }
+
+    @PostConstruct
+    public void init() {
+        servingQueue = new ServingQueue(timeMultiplier);
     }
 
     private void printStatus() {
@@ -183,7 +192,7 @@ public class ACScheduleServiceImpl implements ACScheduleService {
                     result = "空调已启动";
                 } else {
                     // 添加到等待队列
-                    RoomRequest request = new RoomRequest(roomId);
+                    RoomRequest request = acService.initRequest(roomId);
                     waitingQueue.enqueue(request);
                     result = "排队中";
                 }

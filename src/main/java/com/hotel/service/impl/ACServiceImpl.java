@@ -29,6 +29,7 @@ public class ACServiceImpl implements ACService {
     private int acCount;
 
     private final Map<Long, AirConditioner> acs;
+    private ACConfig acConfig;
 
     @Autowired
     public ACServiceImpl(ACConfigMapper acConfigMapper,  RoomService roomService) {
@@ -39,7 +40,7 @@ public class ACServiceImpl implements ACService {
 
     @PostConstruct
     public void init() {
-        ACConfig acConfig = acConfigMapper.selectById(1);
+        acConfig = acConfigMapper.selectById(1);
         for (long id = 1; id <= acCount; id++) {
             acs.put( id, new AirConditioner(id,acConfig));
         }
@@ -53,13 +54,20 @@ public class ACServiceImpl implements ACService {
     }
 
     @Override
+    public RoomRequest initRequest(Long roomId) {
+        RoomRequest request = new RoomRequest(roomId);
+        request.setTargetTemp(acConfig.getDefaultTemp());
+        request.setFanSpeed(acConfig.getDefaultSpeed());
+
+        return request;
+    }
+
+    @Override
     public RoomRequest startAC(Long roomId) {
         for (AirConditioner ac : acs.values()) {
             if (!ac.getOn()) {
                 ac.init(roomId);
-                RoomRequest request = new RoomRequest(roomId);
-                request.setTargetTemp(ac.getDefaultTemp());
-                request.setFanSpeed(ac.getDefaultSpeed());
+                RoomRequest request = initRequest(roomId);
                 request.setServingTime(LocalDateTime.now());
                 request.setCurrentACId(ac.getId());
                 request.setAcOn(true);

@@ -10,17 +10,16 @@ import java.util.PriorityQueue;
 
 @Slf4j
 public class ServingQueue extends BaseQueue{
-    @Value("${hotel.time-multiplier}")
-    int timeMultiplier;
+    private final int timeMultiplier;
 
-
-    public ServingQueue() {
+    public ServingQueue(int timeMultiplier) {
         super();
         queue = new PriorityQueue<>(
                 Comparator.comparing(RoomRequest::getFanSpeedPriority)
                         .thenComparing(RoomRequest::getRequestTime, Comparator.reverseOrder())
                         .thenComparing(RoomRequest::getRoomId, Comparator.reverseOrder())
         );
+        this.timeMultiplier = timeMultiplier;
     }
 
     public void printStatus(){
@@ -43,10 +42,12 @@ public class ServingQueue extends BaseQueue{
         }
         if (candidate.getFanSpeedPriority() == roomRequest.getFanSpeedPriority()){
             // 时间片调度
-            Duration duration = Duration.between(LocalDateTime.now(), roomRequest.getWaitingTime());
+            Duration duration = Duration.between(roomRequest.getWaitingTime(), LocalDateTime.now());
             long seconds = duration.getSeconds() * timeMultiplier;
             seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
+            log.info("seconds: {}, timeMulti: {}", duration.getSeconds(), timeMultiplier);
             // 允许误差范围为1秒
+            log.info("房间{}等待时间: {}s",  roomRequest.getRoomId(), seconds);
             return seconds - timeSlice >= -1 * timeMultiplier;
         }
         return false;
