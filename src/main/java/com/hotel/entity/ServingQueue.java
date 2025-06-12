@@ -36,6 +36,12 @@ public class ServingQueue extends BaseQueue{
     public boolean checkReplace(RoomRequest roomRequest, int timeSlice) {
         // 判断是否可以替换
         RoomRequest candidate = peek();
+        // 如果是刚换入的请求，则不能替换
+        Duration servingDuration = Duration.between(candidate.getServingTime(), LocalDateTime.now());
+        long servingSeconds = servingDuration.getSeconds() * timeMultiplier;
+        if (servingSeconds < 1){
+            return false;
+        }
         if (candidate.getFanSpeedPriority() < roomRequest.getFanSpeedPriority()){
             // 优先级调度
             return true;
@@ -46,9 +52,9 @@ public class ServingQueue extends BaseQueue{
             long seconds = duration.getSeconds() * timeMultiplier;
             seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
             log.info("seconds: {}, timeMulti: {}", duration.getSeconds(), timeMultiplier);
-            // 允许误差范围为1秒
+            // 允许误差范围为50秒
             log.info("房间{}等待时间: {}s",  roomRequest.getRoomId(), seconds);
-            return seconds - timeSlice >= -1 * timeMultiplier;
+            return seconds - timeSlice >= -50L;
         }
         return false;
     }
