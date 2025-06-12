@@ -138,6 +138,7 @@ public class ACServiceImpl implements ACService {
                         roomRequest.setCurrentACId(ac.getId());
                         roomRequest.setAcOn(true);
                         roomRequest.setServingTime(LocalDateTime.now());
+                        break;
                     }
                 }
             }
