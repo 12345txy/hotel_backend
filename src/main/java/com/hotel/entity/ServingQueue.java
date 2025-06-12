@@ -49,9 +49,9 @@ public class ServingQueue extends BaseQueue{
         if (candidate.getFanSpeedPriority() == roomRequest.getFanSpeedPriority()){
             // 时间片调度
             Duration duration = Duration.between(roomRequest.getWaitingTime(), LocalDateTime.now());
-            long minutes = duration.toMinutes();
+//            long minutes = duration.toMinutes();
             long seconds = duration.getSeconds() * timeMultiplier;
-            seconds += minutes * 60;
+//            seconds += minutes * 60;
             seconds += (long) duration.getNano() * timeMultiplier / 1000000000L;
             log.info("seconds: {}, timeMulti: {}", duration.getSeconds(), timeMultiplier);
             // 允许5秒误差
